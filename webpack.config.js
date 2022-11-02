@@ -6,7 +6,7 @@ const lodash = require("lodash-webpack-plugin");
 
 const config = {
     entry: {
-        main: './src/index.js'
+        index: { import: "./src/index.js"},
     },
     plugins: [
         new HtmlWebpackPlugin({

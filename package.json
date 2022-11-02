@@ -1,7 +1,7 @@
 {
     "name": "unit-demo-cra",
     "version": "0.1.0",
-    "homepage": "https://github.com/ipqw/shri_simple_template.git",
+    "homepage": "https://github.com/ipqw/webpack.git",
     "private": true,
     "dependencies": {
         "buffer": "^6.0.3",
@@ -26,7 +26,7 @@
         "start": "webpack serve",
         "build": "rimraf dist && webpack",
         "lint:js": "npx eslint src/*.js --fix",
-        "lint:css": "npx stylelint src/*.css --fix",
+        "lint:css": "stylelint src/*.css --fix",
         "analyze": "webpack --json stats.json",
         "validate": "node_modules/.bin/statoscope validate -i stats.json --config=./statoscope.config.js",
         "predeploy": "npm run build",
