@@ -1,11 +1,16 @@
 name: GitHub Actions
 on: [push]
 jobs: 
-  Explore-GitHub-Actions:
+  init:
     runs-on: ubuntu-latest
     steps: 
+      - name: Build
       - run: run build
+      - name: Lint JS
       - run: run lint:js
+      - name: Lint CSS
       - run: run lint:css
+      - name: Analyze
       - run: run analyze
+      - name: Validate
       - run: run validate
