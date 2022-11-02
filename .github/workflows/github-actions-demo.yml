@@ -1,0 +1,12 @@
+name: GitHub Actions
+on: [push]
+jobs: 
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps: 
+      - run: npm run start
+      - run: npm run lint:js
+      - run: npm run lint:css
+      - run: npm run analyze
+      - run: npm run validate
+      - run: npm run deploy
