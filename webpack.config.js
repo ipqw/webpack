@@ -32,6 +32,7 @@ const config = {
                     test: /[\\/]node_modules[\\/]/,
                     priority: -10,
                     reuseExistingChunk: true,
+                }
             },
             default: {
                 minChunks: 2,
@@ -67,7 +68,6 @@ const config = {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[contenthash].js',
     },
-    
     module: {
         rules: [
             {
@@ -85,8 +85,7 @@ const config = {
                         importLoaders: 1
                     }
                 },
-                'postcss-loader'
-            ]
+                'postcss-loader']
             }
         ],
     },
@@ -96,12 +95,6 @@ const config = {
         maxAssetSize: 512000,
         maxEntrypointSize: 512000,
     },
-    
-    // @TODO optimizations
-    // @TODO lodash treeshaking
-    // @TODO chunk for lodash
-    // @TODO chunk for runtime
-    // @TODO fallback for crypto
-}
+};
 
-module.exports = config
+module.exports = config;
