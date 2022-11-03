@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const StatoscopePlugin = require('@statoscope/webpack-plugin').default;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
 
 const config = {
     entry: {
@@ -23,6 +24,10 @@ const config = {
             saveStatsTo: 'stats.json',
             saveOnlyStats: false,
             open: false,
+        }),
+        new LodashModuleReplacementPlugin({
+            collections: true,
+            paths: true,
         }),
     ],
     mode: 'development',
