@@ -2,11 +2,17 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const StatoscopePlugin = require('@statoscope/webpack-plugin').default;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const lodash = require("lodash-webpack-plugin");
 
 const config = {
     entry: {
-        index: { import: "./src/index.js"},
+        index: { import: "./src/index.js", dependOn: ["Home", "About"]},
+        About: {import: "./src/pages/About.js"},
+        Home: {import: "./src/pages/Home.js", dependOn: "TodoList"},
+        TodoList: {import: "./src/components/TodoList.js", dependOn: "TodoItem"},
+        TodoItem: {import: "./src/components/TodoItem.js"}
+    },
+    optimization: {
+        runtimeChunk: 'single',
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -19,7 +25,7 @@ const config = {
             open: false,
         }),
     ],
-    mode: 'development',
+    mode: 'production',
     devtool: 'inline-source-map',
     devServer: {
         static: path.resolve(__dirname, 'dist'),
