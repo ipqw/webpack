@@ -13,7 +13,32 @@ const config = {
         TodoItem: {import: "./src/components/TodoItem.js"}
     },
     optimization: {
-        runtimeChunk: 'single',
+        usedExports: true,
+        concatenateModules: true,
+        minimize: true,
+        moduleIds: "deterministic",
+        innerGraph: true,
+        providedExports: true,
+        splitChunks: {
+            minSize: 20000,
+            minRemainingSize: 0,
+            maxAsyncRequests: 30,
+            maxInitialRequests: 30,
+            enforceSizeThreshold: 50000,
+            minChunks: 1,
+            chunks: "all",
+            cacheGroups: {
+                defaultVendors: {
+                    test: /[\\/]node_modules[\\/]/,
+                    priority: -10,
+                    reuseExistingChunk: true,
+            },
+            default: {
+                minChunks: 2,
+                priority: -20,
+                reuseExistingChunk: true,
+            },
+        },
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -30,7 +55,7 @@ const config = {
             paths: true,
         }),
     ],
-    mode: 'development',
+    mode: 'production',
     devtool: 'inline-source-map',
     devServer: {
         static: path.resolve(__dirname, 'dist'),
