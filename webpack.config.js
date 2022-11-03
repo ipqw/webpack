@@ -25,7 +25,7 @@ const config = {
             open: false,
         }),
     ],
-    mode: 'production',
+    mode: 'development',
     devtool: 'inline-source-map',
     devServer: {
         static: path.resolve(__dirname, 'dist'),
