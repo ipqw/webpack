@@ -102,6 +102,6 @@ const config = {
     // @TODO chunk for lodash
     // @TODO chunk for runtime
     // @TODO fallback for crypto
-};
+}
 
-module.exports = config;
+module.exports = config
