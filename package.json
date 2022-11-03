@@ -1,7 +1,7 @@
 {
     "name": "unit-demo-cra",
     "version": "0.1.0",
-    "homepage": "https://github.com/ipqw/webpack.git",
+    "homepage": "http://ipqw.github.io/webpack",
     "private": true,
     "dependencies": {
         "buffer": "^6.0.3",
@@ -20,7 +20,7 @@
         "redux-observable": "^2.0.0",
         "rxjs": "^7.1.0",
         "stream": "^0.0.2",
-        "style-loader": "^3.3.1",
+        "style-loader": "^3.3.1",   
         "uuid": "^9.0.0"
     },
     "scripts": {
