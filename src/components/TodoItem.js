@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setDone } from '../store';
-import {UUID} from '../utils/uuid';
+import * as randomUUID from "../crypto-fall"
 
 import styles from './index.module.css';
 
@@ -15,7 +15,7 @@ export const TodoItem= props => {
     const onChange = useCallback(() => dispatch(setDone(index, !done)), [index, done, dispatch]);
 
     return (
-        <div data-testid={UUID()} className={styles.item}>
+        <div data-testid={randomUUID} className={styles.item}>
             <div data-testid="list-item" className={done ? "done" : ""}>
                 <input type="checkbox" checked={done} onChange={onChange} />
                 {text}
