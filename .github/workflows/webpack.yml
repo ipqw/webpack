@@ -29,3 +29,4 @@ jobs:
         npm run lint:js
         npm run lint:css
         npm run validate
+        npm run deploy
