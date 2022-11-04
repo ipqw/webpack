@@ -1,29 +1,32 @@
-import { createStore } from 'redux';
+/* eslint-disable default-param-last */
+/* eslint-disable quotes */
+/* eslint-disable import/prefer-default-export */
+import { createStore } from "redux";
 
-const items = ['Позавтракать', 'Сходить в магазин', 'Покормить кота'];
+const items = ["Позавтракать", "Сходить в магазин", "Покормить кота"];
 
-const DEFAULT_STATE = { items, done: {}, text: '' };
+const DEFAULT_STATE = { items, done: {}, text: "" };
 
 // actions
-export const addItem = (text) => ({ type: 'ADD_ITEM', text });
-export const setText = (text) => ({ type: 'SET_TEXT', text });
-export const setDone = (index, done) => ({ type: 'SET_DONE', index, done });
+export const addItem = (text) => ({ type: "ADD_ITEM", text });
+export const setText = (text) => ({ type: "SET_TEXT", text });
+export const setDone = (index, done) => ({ type: "SET_DONE", index, done });
 
 // reducer
-const rootReducer = (action, state = DEFAULT_STATE) => {
+const rootReducer = (state = DEFAULT_STATE, action) => {
   switch (action.type) {
-    case 'ADD_ITEM':
+    case "ADD_ITEM":
       return {
         ...state,
-        text: '',
+        text: "",
         items: [...state.items, action.text],
       };
-    case 'SET_TEXT':
+    case "SET_TEXT":
       return {
         ...state,
         text: action.text,
       };
-    case 'SET_DONE':
+    case "SET_DONE":
       return {
         ...state,
         done: {
