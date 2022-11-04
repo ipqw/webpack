@@ -1,5 +1,5 @@
-/* eslint-disable import/prefer-default-export */
 /* eslint-disable quotes */
+/* eslint-disable import/prefer-default-export */
 import React, { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setDone } from "../store";
